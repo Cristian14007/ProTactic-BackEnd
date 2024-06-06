@@ -54,6 +54,9 @@ builder.Services.AddScoped<IPlanRepository, PlanEFRepository>();
 builder.Services.AddScoped<IAmigoService, AmigoService>();
 builder.Services.AddScoped<IAmigoRepository, AmigoEFRepository>();
 
+builder.Services.AddScoped<IUsageService, UsageService>();
+builder.Services.AddScoped<IUsageRepository, UsageEFRepository>();
+
 
 //var connectionString = builder.Configuration.GetConnectionString("ServerDB");
 var connectionString = builder.Configuration.GetConnectionString("ServerDB");
