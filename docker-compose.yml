@@ -12,7 +12,7 @@ services:
         #container_name: dbContainer
         image: mcr.microsoft.com/mssql/server:2019-CU21-ubuntu-20.04
         ports:
-            - 8002:1433 #never change internal port!!!
+            - 1433:1433 #never change internal port!!!
         networks:
             - backend
         volumes:
@@ -21,12 +21,12 @@ services:
             #- ~/sqlserver-data:/var/opt/mssql  #bind mounted in Linux/Mac
         environment:    #more secure if you use an .env file
             - ACCEPT_EULA=Y
-            - MSSQL_SA_PASSWORD=<YourStrongPassw0rd>
+            - MSSQL_SA_PASSWORD=YourStrongPassw0rd
     api:
         #container_name: apiContainer
         #image: apidb-dockerdemo:1.2
         ports:
-            - 8001:80   #never change internal port!!!
+            - 80:80   #never change internal port!!!
         networks:
             - backend
         build:
